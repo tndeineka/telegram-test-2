@@ -1,0 +1,33 @@
+.container {
+  background-image: url("../../assets/images/bg.jpg");
+  height: 100vh;
+  width: 100ww;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding: 20px;
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+}
+
+.text {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+}
+

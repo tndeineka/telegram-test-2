@@ -1,35 +1,14 @@
-import { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
-import Character from './components/Character';
-import CoinCounter from './components/CoinCounter';
-import StorePage from './components/StorePage';
+import Character from './components/Character.jsx';
+import { Route, Routes } from 'react-router-dom';
+import { StartPage } from './components/StartPage/StartPage.jsx';
 
-const tg = window.Telegram.WebApp;
-
-function App() {
-  const [coins, setCoins] = useState(0);
-
-  useEffect(() => {
-    tg.ready();
-  })
-
-  const onClose = () => {
-    tg.close();
-  };
-
-  const addCoins = (amount) => {
-    setCoins((prevCoins) => prevCoins + amount);
-  };
-
+export const App = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginTop: '50px', maxWidth: '380px', margin: '0 auto', maxHeight: '620px' }}>
-      <h1>Mini App for Telegram</h1>
-      <button onClick={onClose}>Close</button>
-      <Character addCoins={addCoins} />
-      <CoinCounter coins={coins} />
-      <StorePage coins={coins} />
-    </div>
+    <Routes>
+      <Route index element={<StartPage />} />
+      <Route path="game" element={<Character />} />
+    </Routes>
   );
 }
-
-export default App;
