@@ -1,0 +1,76 @@
+.clickerWrap {
+  background: linear-gradient(
+    rgba(2, 0, 36, 1) 0%,
+    rgba(74, 46, 126, 1) 49%,
+    rgba(11, 58, 68, 1) 100%
+  );
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.coins {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 10px;
+  width: 90%;
+  margin: 20px;
+  margin-inline: auto;
+  background-color: #faebd740;
+}
+
+.imgCoin {
+  width: 20px;
+  height: 20px;
+}
+
+.coinQuant {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.clickerItem {
+  background-image: url("../../assets/images/logo.webp");
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: auto;
+  transition: transform 0.2s ease;
+}
+
+.clickerItem:active {
+  transform: scale(1.1) skew(0deg, -4deg);
+}
+
+.floatingText {
+  position: absolute;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  animation: floatUp 1s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
