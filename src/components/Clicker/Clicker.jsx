@@ -20,9 +20,9 @@ const Clicker = () => {
   };
 
   const handleClick = (e) => {
-    const rect = e.target.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const containerRect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - containerRect.left;
+    const y = e.clientY - containerRect.top;
     addCoins(1, x, y); // Add 1 coin per click
   };
 
@@ -42,7 +42,9 @@ const Clicker = () => {
           key={effect.id}
           className="floatingText"
           style={{ left: `${effect.x}px`, top: `${effect.y}px` }}
-        >+1</span>
+        >
+          +1
+        </span>
       ))}
     </div>
   );
